@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #0a0a0a;
+    font-family: "Cinzel", serif;
+    color: #e0e0e0;
+}
+
+/* SECCIÓN DE CONTACTO */
+.contacto {
+    width: 80%;
+    margin: 50px auto;
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #444;
+    box-shadow: 0 0 15px rgba(255,255,255,0.05);
+}
+
+/* TÍTULO */
+.contacto h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* FORMULARIO */
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ETIQUETAS */
+.contacto label {
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+/* INPUTS Y TEXTAREA */
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    padding: 12px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 15px;
+}
+
+.contacto textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* BOTÓN */
+.contacto button {
+    padding: 12px;
+    background: #787878;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contacto button:hover {
+    background: #a1a1a1;
+}
+/* NAV */
+nav {
+    background: linear-gradient(to right, #5f5f5f, #7a7a7a, #8c8c8c);
+    padding: 12px 0;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+
+    padding: 8px 15px;
+    border-radius: 8px;
+
+    transition: 0.3s ease-in-out;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+nav ul li a:hover {
+    background: #ffffff;
+    color: #000;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
