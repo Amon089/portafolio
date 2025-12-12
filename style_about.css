@@ -1,96 +1,141 @@
 * {
     box-sizing: border-box;
 }
+
 body {
-    margin: 0;                 /* Quita el margen por defecto */
-    padding: 0;                /* Quita el padding por defecto */
-    background: #0a0a0a;       /* Fondo oscuro */
-    font-family: "Cinzel", serif; /* Fuente principal */
-    color: #e0e0e0;            /* Color de texto */
+    margin: 0;
+    padding: 0;
+    background: #0a0a0a;
+    font-family: "Cinzel", serif;
+    color: #e0e0e0;
 }
+
+/* TITULOS */
 h1, h2, h3 {
     text-align: center;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 2rem;
 }
+
+/* NAV */
 nav {
     background: linear-gradient(to right, #5f5f5f, #7a7a7a, #8c8c8c);
     padding: 12px 0;
     box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
+
     display: flex;
-    justify-content: center;
-    gap: 35px;
+    justify-content: center;   /* centra horizontalmente */
+    align-items: center;       /* alinea verticalmente */
+    gap: 25px;                 /* espacio ordenado */
+    flex-wrap: nowrap;         /* evita que se desorganicen */
+    white-space: nowrap;       /* evita saltos raros de línea */
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;       /* centra cada texto */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #000000;
-    font-size: 17px;
+    color: #000;
+    font-size: 1rem;
     font-weight: bold;
-
     padding: 8px 15px;
     border-radius: 8px;
-
     transition: 0.3s ease-in-out;
 }
 
-/* EFECTO AL PASAR EL MOUSE */
 nav ul li a:hover {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
     color: #000;
-    box-shadow: 0 0 10px rgba(255,255,255,0.5);
-}
-div.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    object-fit: left;
-}
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    position: relative;
+    box-shadow: 0 0 10px rgba(255,255,255,0.35);
+    border-radius: 8px;
+    transition: 0.25s ease-in-out;
 }
 
+/* CONTENEDOR GENERAL (PC → horizontal) */
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
-    display: flex;          /* Activa el diseño en fila */
-    align-items: center;    /* Centra verticalmente */
+
+    display: flex;
+    flex-direction: row;       /* horizontal en PC */
+    align-items: center;
     justify-content: space-between;
-    gap: 20px;              /* Espacio entre texto e imagen */
+    gap: 20px;
 }
 
-/* Texto a la izquierda */
+/* TEXTO */
 .container .texto {
-    flex: 1;
+    flex: 1 1 50%;
 }
 
-/* Imagen a la derecha */
+/* IMAGEN */
 .container img {
-    flex: 1;
+    flex: 1 1 50%;
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    display: block;
+}
 
-}
+/* LINKS */
 a {
-    color: #cfcfcf;            /* Color gris claro */
-    text-decoration: none;     /* Quita el subrayado */
-    transition: 0.3s ease;     /* Animación suave */
+    color: #cfcfcf;
+    text-decoration: none;
+    transition: 0.3s ease;
 }
+
 a:hover {
-    color: #ffffff;            /* Se vuelve blanco */
+    color: #ffffff;
 }
+
+/* PÁRRAFOS */
 p {
-    color: rgba(240, 240, 240, 0.85);   /* Blanco suave */
-    font-size: 30px;
+    color: rgba(240, 240, 240, 0.85);
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+/* ============================
+        RESPONSIVE
+============================= */
+
+/* CELULAR → texto arriba, imagen abajo, imagen centrada */
+@media (max-width: 600px) {
+
+    .container {
+        flex-direction: column;  /* ahora vertical */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .container .texto {
+        flex: 1 1 100%;
+    }
+
+    .container img {
+        flex: 1 1 100%;
+        max-width: 80%;         /* más pequeña para móvil */
+        margin: 0 auto;         /* centrada */
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
 }
