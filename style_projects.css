@@ -85,10 +85,8 @@ nav ul li a:hover {
     border-radius: 12px;
     display: flex;
     gap: 20px;
-    display: flex
-
-    
 }
+
 
 /* efecto hover */
 .item:hover {
@@ -97,21 +95,23 @@ nav ul li a:hover {
 }
 
 /* Imagen dentro de la tarjeta */
-.item .imagen {
-    width: 100%;
+.item .imagen{
     width: 180px;
     height: 180px;
     border-radius: 10px;
     overflow: hidden;
+    aspect-ratio: 1 / 1;
     flex-shrink: 0;
-    aspect-ratio: 1/1;
 }
 
-.item .imagen img {
+
+.item .imagen img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
+
 
 /* texto */
 .item article {
@@ -126,7 +126,7 @@ nav ul li a:hover {
 
 /* enlaces dentro de cards */
 .item a {
-    color: #8cbaff;
+    color: #cdcdcd;
     font-weight: bold;
     transition: 0.3s ease;
 }
@@ -136,28 +136,29 @@ nav ul li a:hover {
 }
 
 /* ===============================
-   RESPONSIVE
+            RESPONSIVE
 ================================== */
 
 /* móviles */
 @media (max-width: 600px) {
 
-
-        .item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .item{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     }
 
-    .item article {
-        margin-top: 12px;
+    .item article{
+    margin-top: 12px;
     }
 
-    .item .imagen {
-        width: 100%;
-        height: 200px;
+    .item .imagen{
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
     }
 }
+
 
 @media (min-width: 1024px) {
     .item{
