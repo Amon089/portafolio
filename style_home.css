@@ -8,9 +8,7 @@ body {
     font-family: "Cinzel", serif; /* Fuente principal */
     color: #e0e0e0;            /* Color de texto */
 }
-
 /* Títulos */
-
 nav {
     background: linear-gradient(to right, #5f5f5f, #7a7a7a, #8c8c8c);
     padding: 12px 0;
@@ -19,12 +17,10 @@ nav {
     top: 0;
     z-index: 100;
 }
-
 nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-
     display: flex;
     justify-content: center;   /* centra horizontalmente */
     align-items: center;       /* alinea verticalmente */
@@ -50,32 +46,10 @@ nav ul li a {
 
 nav ul li a:hover {
     background: rgba(255, 255, 255, 0.15);
-    color: #000;
+    color: #000000;
     box-shadow: 0 0 10px rgba(255,255,255,0.35);
     border-radius: 8px;
     transition: 0.25s ease-in-out;
-}
-/* Contenedor principal: texto izquierda / imagen derecha */
-.container {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-/* Texto */
-.container .texto {
-    flex: 1;
-}
-a {
-    color: #000000;            /* Color gris claro */
-    text-decoration: none;     /* Quita el subrayado */
-    transition: 0.3s ease;     /* Animación suave */
-}
-a:hover {
-    color: #ffffff;            /* Se vuelve blanco */
 }
 
 .typewriter {
@@ -88,6 +62,9 @@ a:hover {
     font-size: 5dvh;
     margin: 0;
     opacity: 1;
+    display: grid;
+    place-items:left;
+    
 }
 .typewriter p {
     font-size: 6dvh;
@@ -98,4 +75,6 @@ a:hover {
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
+    
 }
+
