@@ -52,29 +52,84 @@ nav ul li a:hover {
     transition: 0.25s ease-in-out;
 }
 
-.typewriter {
-    overflow: hidden;
-    white-space: nowrap;
+.container {
+    margin: 0 auto;
     width: fit-content;
-    animation: typing 5s steps(40) forwards; /* solo escribe */
-}
-.typewriter h1 {
-    font-size: 5dvh;
-    margin: 0;
-    opacity: 1;
-    display: grid;
-    place-items:left;
-    
-}
-.typewriter p {
-    font-size: 6dvh;
-    margin: 10px 0 0 0;
-    opacity: 1;
-}
-/* Animación de escritura */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-    
+    text-align: center;
 }
 
+/* ===== DESKTOP (typing activo) ===== */
+.container h1,
+.container p {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: .15em solid rgb(136, 136, 136);
+    letter-spacing: .1em;
+}
+
+/* H1 */
+.container h1 {
+    font-size: 8dvh;
+    margin: 0;
+
+    animation:
+        typing-h1 4s steps(32, end) forwards,
+        blink-caret .75s step-end infinite;
+}
+
+/* P */
+.container p {
+    font-size: 8dvh;
+    margin: 10px 0 0 0;
+    opacity: 0;
+
+    animation:
+        typing-p 4s steps(60, end) forwards,
+        blink-caret .75s step-end infinite;
+
+    animation-delay: 4.2s;
+}
+
+/* ===== MÓVIL ===== */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .container h1,
+    .container p {
+        white-space: normal;
+        width: auto;
+        border-right: none;
+        animation: none;
+        opacity: 1;
+        letter-spacing: normal;
+        text-wrap: balance;
+    }
+
+    .container h1 {
+        font-size: 8vw;
+    }
+
+    .container p {
+        font-size: 9vw;
+    }
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes typing-h1 {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes typing-p {
+    from { width: 0; opacity: 1 }
+    to { width: 100%; opacity: 1 }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(180, 180, 180) }
+}
